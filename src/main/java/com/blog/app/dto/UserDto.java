@@ -12,6 +12,7 @@ import javax.validation.constraints.Size;
 @Setter
 @NoArgsConstructor
 public class UserDto {
+    private int id;
     @NotEmpty(message = "Name cannot be empty")
     private String name;
     @NotEmpty(message = "Email cannot be empty")

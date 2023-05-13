@@ -52,10 +52,10 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public CategoryDto updateCategory(CategoryDto categoryDto, int categoryId) {
         log.info("inside update category service");
-        Category byTitle = this.categoryRepo.findByTitle(categoryDto.getTitle());
-        if(byTitle!=null){
-            throw new UserExistsException("Category already exists");
-        }
+//        Category byTitle = this.categoryRepo.findByTitle(categoryDto.getTitle());
+//        if(byTitle!=null){
+//            throw new UserExistsException("Category already exists");
+//        }
         Category category = this.categoryRepo.findById(categoryId).orElseThrow(() -> new ResourceNotFoundException("Category", "Id", categoryId));
         category.setTitle(categoryDto.getTitle());
         category.setDescription(categoryDto.getDescription());

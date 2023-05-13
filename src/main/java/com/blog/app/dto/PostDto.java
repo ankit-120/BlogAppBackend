@@ -11,11 +11,11 @@ import javax.validation.constraints.NotEmpty;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CategoryDto {
-
-    private int id;
+public class PostDto {
     @NotEmpty(message = "Title cannot be empty")
     private String title;
-    private String description;
+    private String content;
+    private UserDto user;
+    private CategoryDto category;
 
 }
