@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -25,7 +26,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto addUser(UserDto userDto) {
         log.info("inside add user service");
-        User byEmail = this.userRepo.findByEmail(userDto.getEmail());
+        Optional<User> byEmail = this.userRepo.findByEmail(userDto.getEmail());
         if(byEmail!=null){
             throw new UserExistsException("Email already exists");
         }

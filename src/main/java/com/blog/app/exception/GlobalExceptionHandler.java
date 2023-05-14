@@ -35,5 +35,9 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(new ErrorMessage(ex.getMessage()),HttpStatus.NOT_FOUND);
     }
 
+    public ResponseEntity<ErrorMessage> userDoesNotExistExceptionHandler(UserDoesNotExistsException ex){
+        return new ResponseEntity<>(new ErrorMessage(ex.getMessage()),HttpStatus.NOT_FOUND);
+    }
+
 
 }

@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.validation.constraints.NotEmpty;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -17,5 +19,6 @@ public class PostDto {
     private String content;
     private UserDto user;
     private CategoryDto category;
+    private Set<CommentDto> comments = new HashSet<>();
 
 }
